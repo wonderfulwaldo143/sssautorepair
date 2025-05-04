@@ -1,0 +1,54 @@
+# Netlify redirects file for SSS Auto Repair website
+# More information: https://docs.netlify.com/routing/redirects/
+
+# Force HTTPS
+http://:splat https://:splat 301!
+
+# Remove trailing slashes
+/*/ /:splat 301
+
+# Redirect for blog main page and related URLs
+/blog /blog/index.html 301
+/blog.html /blog/index.html 301
+
+# Specific service redirects for SEO-friendly URLs
+/brakes /services.html#brakes 301
+/electrical /services.html#electrical 301
+/transmission /services.html#transmission 301
+/oil-change /services.html#oil-changes 301
+/diagnostics /services.html#diagnostics 301
+/repairs /services.html#general-repairs 301
+/uhaul /services.html#uhaul 301
+
+# Service category redirects
+/services/brakes /services.html#brakes 301
+/services/electrical /services.html#electrical 301
+/services/transmission /services.html#transmission 301
+/services/oil-change /services.html#oil-changes 301
+/services/diagnostics /services.html#diagnostics 301
+/services/repairs /services.html#general-repairs 301
+/services/uhaul /services.html#uhaul 301
+
+# Blog-specific redirects (clean URLs for blog posts)
+/blog/:slug /blog/:slug.html 301
+
+# Special topic pages
+/chicago-auto-repair /index.html 301
+/sheffield-ave-mechanic /index.html 301
+/best-auto-repair-chicago /index.html 301
+/lincoln-park-auto-repair /index.html 301
+/lakeview-auto-repair /index.html 301
+
+# Redirect old URLs if migrating from a previous website
+# Example: /old-page-name /new-page-name 301
+
+# Redirect possible misspellings
+/service /services.html 301
+/about-us /about.html 301
+/contact-us /contact.html 301
+/testimonial /testimonials.html 301
+/review /testimonials.html 301
+/reviews /testimonials.html 301
+
+# Handle request to missing files
+/* /404.html 404
